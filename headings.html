@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HTML Headings Explained</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="headings.css">
+  <script src="headings.js" defer></script>
 </head>
 <body>
   <main>
@@ -14,46 +19,72 @@
       <code>&lt;h6&gt;</code>, the least important heading.
     </p>
 
+    <div class="controls" aria-label="Heading lesson controls">
+      <button type="button" id="toggle-explanations">Hide explanations</button>
+      <button type="button" id="highlight-headings">Highlight headings</button>
+    </div>
+    <p class="interaction-note" aria-live="polite">
+      Select any example heading to focus on its level.
+    </p>
+
     <h2>Heading Levels</h2>
 
-    <h1>H1: Main Page Heading</h1>
-    <p>
+    <section class="heading-row" data-level="H1">
+      <span class="level-badge">01</span>
+      <h1 class="heading-example" tabindex="0">H1: Main Page Heading</h1>
+    <p class="heading-explanation">
       Use <code>&lt;h1&gt;</code> for the main heading of the page. A page
       usually has one clear <code>&lt;h1&gt;</code> describing its main topic.
     </p>
+    </section>
 
-    <h2>H2: Major Section Heading</h2>
-    <p>
+    <section class="heading-row" data-level="H2">
+      <span class="level-badge">02</span>
+      <h2 class="heading-example" tabindex="0">H2: Major Section Heading</h2>
+    <p class="heading-explanation">
       Use <code>&lt;h2&gt;</code> for major sections that belong under the
       page's main topic.
     </p>
+    </section>
 
-    <h3>H3: Subsection Heading</h3>
-    <p>
+    <section class="heading-row" data-level="H3">
+      <span class="level-badge">03</span>
+      <h3 class="heading-example" tabindex="0">H3: Subsection Heading</h3>
+    <p class="heading-explanation">
       Use <code>&lt;h3&gt;</code> for a subsection inside an
       <code>&lt;h2&gt;</code> section.
     </p>
+    </section>
 
-    <h4>H4: Detailed Subsection</h4>
-    <p>
+    <section class="heading-row" data-level="H4">
+      <span class="level-badge">04</span>
+      <h4 class="heading-example" tabindex="0">H4: Detailed Subsection</h4>
+    <p class="heading-explanation">
       Use <code>&lt;h4&gt;</code> when a section needs another level of detail
       below an <code>&lt;h3&gt;</code> heading.
     </p>
+    </section>
 
-    <h5>H5: Small Supporting Section</h5>
-    <p>
+    <section class="heading-row" data-level="H5">
+      <span class="level-badge">05</span>
+      <h5 class="heading-example" tabindex="0">H5: Small Supporting Section</h5>
+    <p class="heading-explanation">
       Use <code>&lt;h5&gt;</code> for a smaller supporting section beneath an
       <code>&lt;h4&gt;</code> heading.
     </p>
+    </section>
 
-    <h6>H6: Lowest Heading Level</h6>
-    <p>
+    <section class="heading-row" data-level="H6">
+      <span class="level-badge">06</span>
+      <h6 class="heading-example" tabindex="0">H6: Lowest Heading Level</h6>
+    <p class="heading-explanation">
       Use <code>&lt;h6&gt;</code> for the most specific heading level. It should
       appear inside a logical heading structure.
     </p>
+    </section>
 
     <h2>Important Rule</h2>
-    <p>
+    <p class="heading-explanation">
       Choose headings according to their meaning and structure, not just their
       font size. CSS can change how any heading looks while keeping its proper
       semantic level.
