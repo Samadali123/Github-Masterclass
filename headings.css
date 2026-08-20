@@ -155,6 +155,125 @@ button:focus-visible {
   display: none;
 }
 
+.contact-form {
+  margin: 28px 0 10px;
+  padding: clamp(20px, 4vw, 34px);
+  background: #f0f7f4;
+  border: 1px solid #c9ded7;
+  border-radius: 10px;
+  box-shadow: 8px 8px 0 #d8e8df;
+}
+
+.contact-form fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.contact-form legend {
+  margin-bottom: 22px;
+  color: var(--ink);
+  font: 700 clamp(1.3rem, 3vw, 1.8rem) "Space Grotesk", sans-serif;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.form-field {
+  display: grid;
+  gap: 7px;
+}
+
+.form-field-wide {
+  grid-column: 1 / -1;
+}
+
+.form-field label,
+.check-field {
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 12px 13px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid #a9c6bc;
+  border-radius: 5px;
+  font: inherit;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.form-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #82918d;
+}
+
+.form-field input:hover,
+.form-field select:hover,
+.form-field textarea:hover {
+  border-color: var(--teal);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--coral);
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(220, 111, 87, 0.2);
+  transform: translateY(-1px);
+}
+
+.form-field input:user-invalid,
+.form-field textarea:user-invalid {
+  border-color: #bd4d43;
+}
+
+.check-field {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 22px;
+  cursor: pointer;
+}
+
+.check-field input {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--teal);
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.button-secondary {
+  color: var(--teal);
+  background: transparent;
+  border: 1px solid var(--teal);
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible {
+  color: #ffffff;
+}
+
 code {
   padding: 2px 5px;
   color: #8a4b18;
@@ -198,6 +317,14 @@ code {
     grid-template-columns: 1fr;
     gap: 4px;
     padding: 16px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-field-wide {
+    grid-column: auto;
   }
 
   .heading-row.is-focused,
