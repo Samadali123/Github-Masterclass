@@ -90,54 +90,82 @@
       semantic level.
     </p>
 
-    <h2>HTML Forms</h2>
+    <h2>HTML Forms Explained</h2>
     <p>
-      Forms collect information from users. Use labels to describe controls,
-      meaningful <code>name</code> values to identify submitted data, and the
-      correct input type to provide useful browser validation.
+      Forms collect information from users. The <code>&lt;form&gt;</code>
+      element groups the controls together, while labels tell users what each
+      control is for.
     </p>
 
-    <form class="contact-form" action="#" method="post">
+    <h3>Common Form Elements</h3>
+    <ul>
+      <li><code>&lt;label&gt;</code> describes a form control.</li>
+      <li><code>&lt;input&gt;</code> accepts different kinds of user input.</li>
+      <li><code>&lt;select&gt;</code> creates a list of choices.</li>
+      <li><code>&lt;textarea&gt;</code> accepts longer written responses.</li>
+      <li><code>&lt;button&gt;</code> lets the user submit or control the form.</li>
+    </ul>
+
+    <h3>Example Contact Form</h3>
+    <form action="#" method="post">
       <fieldset>
-        <legend>Try a contact form</legend>
+        <legend>Send us a message</legend>
 
-        <div class="form-grid">
-          <div class="form-field">
-            <label for="full-name">Full name</label>
-            <input type="text" id="full-name" name="full-name" autocomplete="name" placeholder="Alex Morgan" required>
-          </div>
+        <p>
+          <label for="full-name">Full name</label>
+          <input type="text" id="full-name" name="full-name" required>
+        </p>
 
-          <div class="form-field">
-            <label for="email">Email address</label>
-            <input type="email" id="email" name="email" autocomplete="email" placeholder="alex@example.com" required>
-          </div>
+        <p>
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" required>
+        </p>
 
-          <div class="form-field form-field-wide">
-            <label for="topic">What would you like to learn?</label>
-            <select id="topic" name="topic">
-              <option value="headings">HTML headings</option>
-              <option value="forms">HTML forms</option>
-              <option value="css">CSS styling</option>
-            </select>
-          </div>
+        <p>
+          <label for="topic">Topic</label>
+          <select id="topic" name="topic">
+            <option value="headings">HTML headings</option>
+            <option value="forms">HTML forms</option>
+            <option value="other">Something else</option>
+          </select>
+        </p>
 
-          <div class="form-field form-field-wide">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Write your question here..." required></textarea>
-          </div>
-        </div>
+        <fieldset>
+          <legend>Preferred reply method</legend>
+          <label>
+            <input type="radio" name="reply-method" value="email" checked>
+            Email
+          </label>
+          <label>
+            <input type="radio" name="reply-method" value="phone">
+            Phone
+          </label>
+        </fieldset>
 
-        <label class="check-field" for="updates">
-          <input type="checkbox" id="updates" name="updates">
-          Send me HTML learning updates
+        <p>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </p>
+
+        <label>
+          <input type="checkbox" name="updates">
+          Send me occasional HTML learning updates
         </label>
 
-        <div class="form-actions">
-          <button type="submit">Send message</button>
-          <button class="button-secondary" type="reset">Clear form</button>
-        </div>
+        <p>
+          <button type="submit">Submit form</button>
+          <button type="reset">Clear form</button>
+        </p>
       </fieldset>
     </form>
+
+    <h3>Important Form Rules</h3>
+    <p>
+      Every important control should have a connected label. Give controls a
+      meaningful <code>name</code>, use the correct input
+      <code>type</code>, and add <code>required</code> when a value is needed.
+      The browser can then provide useful built-in validation.
+    </p>
   </main>
 </body>
 </html>
