@@ -3,6 +3,13 @@ const highlightButton = document.querySelector("#highlight-headings");
 const explanations = document.querySelectorAll(".heading-explanation");
 const headingExamples = document.querySelectorAll(".heading-example");
 const interactionNote = document.querySelector(".interaction-note");
+const contactForm = document.querySelector(".contact-form");
+const submissionResult = document.querySelector("#submission-result");
+const resultName = document.querySelector("#result-name");
+const resultEmail = document.querySelector("#result-email");
+const resultTopic = document.querySelector("#result-topic");
+const resultMessage = document.querySelector("#result-message");
+const resultUpdates = document.querySelector("#result-updates");
 
 toggleButton.addEventListener("click", () => {
   const explanationsAreHidden = explanations[0].classList.toggle("is-hidden");
@@ -46,4 +53,30 @@ headingExamples.forEach((heading) => {
       focusHeading();
     }
   });
+});
+
+contactForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (!contactForm.checkValidity()) {
+    contactForm.reportValidity();
+    return;
+  }
+
+  const formData = new FormData(contactForm);
+  resultName.textContent = formData.get("full-name");
+  resultEmail.textContent = formData.get("email");
+  resultTopic.textContent = contactForm.querySelector("#topic option:checked").textContent;
+  resultMessage.textContent = formData.get("message");
+  resultUpdates.textContent = formData.has("updates") ? "Yes" : "No";
+
+  submissionResult.hidden = false;
+  submissionResult.classList.remove("result-pop-in");
+  requestAnimationFrame(() => submissionResult.classList.add("result-pop-in"));
+  submissionResult.scrollIntoView({ behavior: "smooth", block: "nearest" });
+});
+
+contactForm.addEventListener("reset", () => {
+  submissionResult.hidden = true;
+  submissionResult.classList.remove("result-pop-in");
 });
