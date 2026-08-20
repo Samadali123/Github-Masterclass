@@ -89,6 +89,83 @@
       font size. CSS can change how any heading looks while keeping its proper
       semantic level.
     </p>
+
+    <h2>HTML Forms Explained</h2>
+    <p>
+      Forms collect information from users. The <code>&lt;form&gt;</code>
+      element groups the controls together, while labels tell users what each
+      control is for.
+    </p>
+
+    <h3>Common Form Elements</h3>
+    <ul>
+      <li><code>&lt;label&gt;</code> describes a form control.</li>
+      <li><code>&lt;input&gt;</code> accepts different kinds of user input.</li>
+      <li><code>&lt;select&gt;</code> creates a list of choices.</li>
+      <li><code>&lt;textarea&gt;</code> accepts longer written responses.</li>
+      <li><code>&lt;button&gt;</code> lets the user submit or control the form.</li>
+    </ul>
+
+    <h3>Example Contact Form</h3>
+    <form action="#" method="post">
+      <fieldset>
+        <legend>Send us a message</legend>
+
+        <p>
+          <label for="full-name">Full name</label>
+          <input type="text" id="full-name" name="full-name" required>
+        </p>
+
+        <p>
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" required>
+        </p>
+
+        <p>
+          <label for="topic">Topic</label>
+          <select id="topic" name="topic">
+            <option value="headings">HTML headings</option>
+            <option value="forms">HTML forms</option>
+            <option value="other">Something else</option>
+          </select>
+        </p>
+
+        <fieldset>
+          <legend>Preferred reply method</legend>
+          <label>
+            <input type="radio" name="reply-method" value="email" checked>
+            Email
+          </label>
+          <label>
+            <input type="radio" name="reply-method" value="phone">
+            Phone
+          </label>
+        </fieldset>
+
+        <p>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </p>
+
+        <label>
+          <input type="checkbox" name="updates">
+          Send me occasional HTML learning updates
+        </label>
+
+        <p>
+          <button type="submit">Submit form</button>
+          <button type="reset">Clear form</button>
+        </p>
+      </fieldset>
+    </form>
+
+    <h3>Important Form Rules</h3>
+    <p>
+      Every important control should have a connected label. Give controls a
+      meaningful <code>name</code>, use the correct input
+      <code>type</code>, and add <code>required</code> when a value is needed.
+      The browser can then provide useful built-in validation.
+    </p>
   </main>
 </body>
 </html>
