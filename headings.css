@@ -65,6 +65,38 @@ p {
   margin: 0 0 1rem;
 }
 
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0 32px;
+}
+
+button {
+  padding: 10px 16px;
+  color: #ffffff;
+  background: #145c52;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  font: inherit;
+}
+
+button:hover,
+button:focus-visible {
+  background: #0d4039;
+}
+
+.heading-example.is-highlighted {
+  padding: 8px 12px;
+  background: #fff4dc;
+  outline: 2px solid #e1b866;
+}
+
+.heading-explanation.is-hidden {
+  display: none;
+}
+
 code {
   padding: 2px 5px;
   color: #8a4b18;
